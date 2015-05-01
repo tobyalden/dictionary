@@ -25,6 +25,16 @@ describe("integration specs for web front-end") do
     end
   end
 
+  describe("clearing the dictionary from the index page", {:type => :feature}) do
+    it("displays a page listing all the words the user has added to the dictionary, and a button that will reload the page with all the words removed") do
+      visit('/')
+      fill_in('new_word', :with => 'garrulous')
+      click_button('add_word')
+      click_button('clear_dictionary')
+      expect(page).to(have_no_content('garrulous'))
+    end
+  end
+
   describe("the path to a page for a specific word", {:type => :feature}) do
     it("displays a page listing all the words the user has added to the dictionary, each of which is a link to that word's page") do
       visit('/')

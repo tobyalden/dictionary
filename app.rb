@@ -26,6 +26,13 @@ post('/add_word') do
   erb(:index)
 end
 
+post('/clear_dictionary') do
+  dictionary = Dictionary.new()
+  dictionary.save()
+  @words = dictionary.words
+  erb(:index)
+end
+
 get('/word/:word') do
   dictionary = Dictionary.load()
   @word = dictionary.get_word(params.fetch('word'))
