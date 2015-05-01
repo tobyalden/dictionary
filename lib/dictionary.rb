@@ -24,5 +24,15 @@ class Dictionary
     @words.push(word)
   end
 
+  define_method(:get_word) do |find_word|
+    @words.each() do |word|
+      if(word.word == find_word)
+        return word
+      else
+        return nil
+      end
+    end
+  end
+
 
 end

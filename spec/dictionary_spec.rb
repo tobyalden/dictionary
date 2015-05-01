@@ -31,4 +31,13 @@ describe(Dictionary) do
     end
   end
 
+  describe(:get_word) do
+    it ("will return a specific word object from a dictionary's list of words given the corresponding string") do
+      test_dictionary = Dictionary.new()
+      test_word = Word.new("puissance")
+      test_dictionary.add_word(test_word)
+      expect(test_dictionary.get_word("puissance")).to(eq(test_word))
+    end
+  end
+
 end
