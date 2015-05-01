@@ -24,6 +24,7 @@ class Dictionary
 
   define_method(:add_word) do |word|
     @words.push(word)
+    @words = @words.sort_by {|word| word.word}
   end
 
   define_method(:get_word) do |find_word|
