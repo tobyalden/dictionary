@@ -26,17 +26,16 @@ post('/add_word') do
   erb(:index)
 end
 
+get('/word/:word') do
+  dictionary = Dictionary.load()
+  @word = dictionary.get_word(params.fetch('word'))
+  erb(:word)
+end
+
 post('/add_definition') do
   dictionary = Dictionary.load()
   @word = dictionary.get_word(params.fetch('word'))
   @word.add_definition(Definition.new(params.fetch('new_definition')))
   dictionary.save()
-  erb(:word)
-end
-
-get('/word/:word') do
-  dictionary = Dictionary.load()
-  @word = dictionary.get_word(params.fetch('word'))
-#binding.pry
   erb(:word)
 end
