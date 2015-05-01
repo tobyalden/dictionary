@@ -1,3 +1,4 @@
+require('pry')
 require('require_all')
 require('sinatra')
 require('sinatra/reloader')
@@ -36,5 +37,6 @@ end
 get('/word/:word') do
   dictionary = Dictionary.load()
   @word = dictionary.get_word(params.fetch('word'))
+#binding.pry
   erb(:word)
 end

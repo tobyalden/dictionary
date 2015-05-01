@@ -1,3 +1,5 @@
+require('pry')
+
 class Dictionary
 
   @@words_global = nil
@@ -28,10 +30,9 @@ class Dictionary
     @words.each() do |word|
       if(word.word == find_word)
         return word
-      else
-        return nil
       end
     end
+    return nil
   end
 
 

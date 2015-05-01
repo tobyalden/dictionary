@@ -35,8 +35,11 @@ describe(Dictionary) do
     it ("will return a specific word object from a dictionary's list of words given the corresponding string") do
       test_dictionary = Dictionary.new()
       test_word = Word.new("puissance")
+      test_word2 = Word.new("dentate")
       test_dictionary.add_word(test_word)
+      test_dictionary.add_word(test_word2)
       expect(test_dictionary.get_word("puissance")).to(eq(test_word))
+      expect(test_dictionary.get_word("dentate")).to(eq(test_word2))
     end
   end
 
