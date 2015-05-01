@@ -10,4 +10,13 @@ describe(Dictionary) do
     end
   end
 
+  describe(:add_word) do
+    it("will add a word to a dictionary's list of words") do
+      test_dictionary = Dictionary.new()
+      test_word = Word.new("puissance")
+      test_dictionary.add_word(test_word)
+      expect(test_dictionary.words).to(eq([test_word]))
+    end
+  end
+
 end
