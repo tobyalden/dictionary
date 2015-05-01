@@ -25,4 +25,14 @@ describe("integration specs for web front-end") do
     end
   end
 
+  describe("the path to a page for a specific word", {:type => :feature}) do
+    it("displays a page listing all the words the user has added to the dictionary, each of which is a link to that word's page") do
+      visit('/')
+      fill_in('new_word', :with => 'garrulous')
+      click_button('add_word')
+      click_link('garrulous')
+      expect(page).to(have_content('garrulous'))
+    end
+  end
+
 end

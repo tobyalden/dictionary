@@ -25,7 +25,7 @@ post('/add_word') do
   erb(:index)
 end
 
-get('/:word') do
+get('/word/:word') do
   dictionary = Dictionary.load()
   @word = dictionary.get_word(params.fetch('word'))
   erb(:word)
