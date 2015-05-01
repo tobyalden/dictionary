@@ -19,4 +19,12 @@ describe(Dictionary) do
     end
   end
 
+  describe(:save, :load) do
+    it("will save and load an instance of a dictionary to and from the class itself") do
+      test_dictionary = Dictionary.new()
+      test_dictionary.save()
+      expect(Dictionary.load()).to(eq(test_dictionary))
+    end
+  end
+
 end

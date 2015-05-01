@@ -1,6 +1,6 @@
 class Dictionary
 
-  @@words_global = []
+  @@words_global = Dictionary.new() 
 
   attr_reader(:words)
 
@@ -13,7 +13,7 @@ class Dictionary
   end
 
   define_method(:save) do
-    @@words_global = @words
+    @@words_global = self
   end
 
   define_method(:add_word) do |word|
