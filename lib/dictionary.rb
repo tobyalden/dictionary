@@ -1,6 +1,6 @@
 class Dictionary
 
-  @@words_global = Dictionary.new()
+  @@words_global = nil
 
   attr_reader(:words)
 

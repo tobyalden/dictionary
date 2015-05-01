@@ -1,5 +1,11 @@
 <h2>List of words:</h2>
 
+<ul>
+  <% @words.each() do |word| %>
+  <li> <%= word.word %> </li>
+  <% end %>
+</ul>
+
 <form action='/add_word' method='post'>
   <div class='form-group'>
     <label for='new_word'>Add new word:</label>
