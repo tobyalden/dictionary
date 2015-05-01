@@ -35,4 +35,16 @@ describe("integration specs for web front-end") do
     end
   end
 
+  describe("adding a new definition from a word's page", {:type => :feature}) do
+    it("displays a page listing all the dictionary's words, each of which is a link to that word's page, which contains a list of definitions, a form to enter a new definition, and a button that will reload the word's page with the new definition added to its list") do
+      visit('/')
+      fill_in('new_word', :with => 'garrulous')
+      click_button('add_word')
+      click_link('garrulous')
+      fill_in('new_definition', :with => 'excessively talkative, esp. on trivial matters')
+      click_button('add_definition')
+      expect(page).to(have_content('excessively talkative, esp. on trivial matters'))
+    end
+  end
+
 end

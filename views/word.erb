@@ -1,1 +1,23 @@
-<%= @word.word %>
+<h2><%= @word.word %></h2>
+
+
+
+<ol>
+  <% @word.definitions.each() do |definition| %>
+  <li> <%= definition.definition %> </li>
+  <% end %>
+</ol>
+
+<form action='/add_definition' method='post'>
+
+  <input id='word' name='word' type='hidden' value=<%= @word.word %>>
+
+  <div class='form-group'>
+    <label for='new_definition'>Add new definition:</label>
+    <input id='new_definition' name='new_definition' class='form-control' type='text'>
+  </div>
+  <button id="add_definition" class='btn-success'>Add</button>
+</form>
+
+<br>
+<a class="btn btn-default" href="/" role="button">Return</a>
