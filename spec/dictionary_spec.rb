@@ -3,6 +3,10 @@ require('dictionary')
 
 describe(Dictionary) do
 
+  before() do
+    Dictionary.clear()
+  end
+
   describe(:initialize) do
     it("will initialize a new dictionary with an empty list of words") do
       test_dictionary = Dictionary.new()

@@ -1,6 +1,6 @@
 class Dictionary
 
-  @@words_global = Dictionary.new() 
+  @@words_global = Dictionary.new()
 
   attr_reader(:words)
 
@@ -10,6 +10,10 @@ class Dictionary
 
   define_singleton_method(:load) do
     return @@words_global
+  end
+
+  define_singleton_method(:clear) do
+    @@words_global = Dictionary.new()
   end
 
   define_method(:save) do
